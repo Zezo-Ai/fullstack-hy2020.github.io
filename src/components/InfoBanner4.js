@@ -40,7 +40,7 @@ const InfoBanner4 = ({ visible, onHide }) => {
     outline: 'none',
     backgroundColor: 'transparent',
     border: 'none',
-    color: '#33332D',
+    color: style.color,
     cursor: 'pointer',
   };
 
