@@ -189,7 +189,7 @@ Before we move on to the next part, we will take a look at an important tool cal
 
 In compiled statically typed languages like Java, IDEs like NetBeans can point out errors in the code, even ones that are more than just compile errors. Additional tools for performing [static analysis](https://en.wikipedia.org/wiki/Static_program_analysis) like [checkstyle](https://checkstyle.sourceforge.io), can be used for expanding the capabilities of the IDE to also point out problems related to style, like indentation.
 
-In the JavaScript universe, the current leading tool for static analysis (aka "linting") is [ESlint](https://eslint.org/).
+In the JavaScript universe, the current leading tool for static analysis (aka "linting") is [ESLint](https://eslint.org/).
 
 Let's add ESLint as a <i>development dependency</i> for the backend. Development dependencies are tools that are only needed during the development of the application. For example, tools related to testing are such dependencies. When the application is run in production mode, development dependencies are not needed.
 
@@ -218,7 +218,7 @@ The contents of the package.json file will change as follows:
 
 The command added a <i>devDependencies</i> section to the file and included the packages <i>eslint</i> and <i>@eslint/js</i>, and installed the required libraries into the <i>node_modules</i> directory.
 
-After this we can initialize a default ESlint configuration with the command:
+After this we can initialize a default ESLint configuration with the command:
 
 ```bash
 npx eslint --init
@@ -226,7 +226,7 @@ npx eslint --init
 
 We will answer all of the questions:
 
-![terminal output from ESlint init](../../images/3/lint1.png)
+![terminal output from ESLint init](../../images/3/lint1.png)
 
 The configuration will be saved in the generated _eslint.config.mjs_ file.
 
@@ -303,7 +303,7 @@ export default [
 ]
 ```
 
-The [plugins](https://eslint.org/docs/latest/use/configure/plugins) property provides a way to extend ESLint's functionality by adding custom rules, configurations, and other capabilities that are not available in the core ESLint library. We've installed and enabled the _@stylistic/eslint-plugin_, which adds JavaScript stylistic rules for ESLint. In addition, rules for indentation, line breaks, quotes, and semicolons have been added. These four rules are all defined in the [Eslint styles plugin](https://eslint.style/packages/js).
+The [plugins](https://eslint.org/docs/latest/use/configure/plugins) property provides a way to extend ESLint's functionality by adding custom rules, configurations, and other capabilities that are not available in the core ESLint library. We've installed and enabled the _@stylistic/eslint-plugin_, which adds JavaScript stylistic rules for ESLint. In addition, rules for indentation, line breaks, quotes, and semicolons have been added. These four rules are all defined in the [ESLint styles plugin](https://eslint.style/packages/js).
 
 **Note for Windows users:** The linebreak style is set to _unix_ in the style rules. It is recommended to use Unix-style linebreaks (_\n_) regardless of your operating system, as they are compatible with most modern operating systems and facilitate collaboration when multiple people are working on the same files. If you are using Windows-style linebreaks, ESLint will produce the following errors: <i>Expected linebreaks to be 'LF' but found 'CRLF'</i>. In this case, configure Visual Studio Code to use Unix-style linebreaks by following [this guide](https://stackoverflow.com/questions/48692741/how-can-i-make-all-line-endings-eols-in-all-files-in-visual-studio-code-unix).
 
@@ -351,23 +351,23 @@ export default [
 ]
 ```
 
-This causes the entire <em>dist</em> directory to not be checked by ESlint.
+This causes the entire <em>dist</em> directory to not be checked by ESLint.
 
 Lint has quite a lot to say about our code:
 
-![terminal output of ESlint errors](../../images/3/53ea.png)
+![terminal output of ESLint errors](../../images/3/53ea.png)
 
 A better alternative to executing the linter from the command line is to configure an _eslint-plugin_ to the editor, that runs the linter continuously. By using the plugin you will see errors in your code immediately. You can find more information about the Visual Studio ESLint plugin [here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
-The VS Code ESlint plugin will underline style violations with a red line:
+The VS Code ESLint plugin will underline style violations with a red line:
 
-![Screenshot of vscode ESlint plugin showing errors](../../images/3/54a.png)
+![Screenshot of vscode ESLint plugin showing errors](../../images/3/54a.png)
 
 This makes errors easy to spot and fix right away.
 
 ### Adding More Style Rules
 
-ESlint has a vast array of [rules](https://eslint.org/docs/rules/) that are easy to take into use by editing the _eslint.config.mjs_ file.
+ESLint has a vast array of [rules](https://eslint.org/docs/rules/) that are easy to take into use by editing the _eslint.config.mjs_ file.
 
 Let's add the [eqeqeq](https://eslint.org/docs/rules/eqeqeq) rule that warns us if equality is checked with anything but the triple equals operator. The rule is added under the rules field in the configuration file.
 
@@ -473,7 +473,7 @@ export default [
 
 If there is something wrong in your configuration file, the lint plugin can behave quite erratically.
 
-Many companies define coding standards that are enforced throughout the organization through the ESlint configuration file. It is not recommended to keep reinventing the wheel over and over again, and it can be a good idea to adopt a ready-made configuration from someone else's project into yours. Recently many projects have adopted the Airbnb [Javascript style guide](https://github.com/airbnb/javascript) by taking Airbnb's [ESlint](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) configuration into use.
+Many companies define coding standards that are enforced throughout the organization through the ESLint configuration file. It is not recommended to keep reinventing the wheel over and over again, and it can be a good idea to adopt a ready-made configuration from someone else's project into yours. Recently many projects have adopted the Airbnb [Javascript style guide](https://github.com/airbnb/javascript) by taking Airbnb's [ESLint](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) configuration into use.
 
 You can find the code for our current application in its entirety in the <i>part3-7</i> branch of [this GitHub repository](https://github.com/fullstack-hy2020/part3-notes-backend/tree/part3-7).
 
@@ -485,7 +485,7 @@ You can find the code for our current application in its entirety in the <i>part
 
 #### 3.22: Lint configuration
 
-Add ESlint to your application and fix all the warnings.
+Add ESLint to your application and fix all the warnings.
 
 This was the last exercise of this part of the course. It's time to push your code to GitHub and mark all of your finished exercises to the [exercise submission system](https://studies.cs.helsinki.fi/stats/courses/fullstackopen).
 
